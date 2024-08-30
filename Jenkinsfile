@@ -17,8 +17,9 @@ pipeline{
                 steps{
                     sh '''
                         python3 --version
-                        pipenv install setuptools wheel twine
-                    '''
+                        pipenv --version
+                        pipenv install setuptools
+                      '''
                 }
             }
         }
