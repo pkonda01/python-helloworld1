@@ -15,12 +15,10 @@ pipeline{
 
             stage('Setup Python'){
                 steps{
+                    sh 'export PATH=$PATH:export PATH= $PATH:/Users/pkonda01/Library/Python/3.9/bin'
                     sh '''
                         python3 --version
-                        export PATH= $PATH:/Users/pkonda01/Library/Python/3.9/bin
-                        source ~/.bash_profile
                         pipenv --version
-                        pipenv install setuptools
                       '''
                 }
             }
