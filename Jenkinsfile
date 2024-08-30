@@ -10,8 +10,5 @@ pipeline {
         git 'https://github.com/pkonda01/python-helloworld1.git'
       }
     }
-    stage('Upload to Artifactory') {
-      
-    }
   }
 }
