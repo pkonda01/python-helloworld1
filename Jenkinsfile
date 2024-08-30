@@ -17,6 +17,7 @@ pipeline{
                 steps{
                     sh '''
                         python3 --version
+                        pip3 install --user pipenv
                         pipenv --version
                         pipenv install setuptools
                       '''
