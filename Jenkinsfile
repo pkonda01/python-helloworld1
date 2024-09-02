@@ -19,9 +19,33 @@ pipeline{
                     sh '''
                         python3 --version
                         pipenv --version
+                        pipenv shell
                       '''
+                }
+            }
+
+             stage('Build'){
+                steps{
+                    // sh 'export PATH=$PATH:/Users/pkonda01/Library/Python/3.9/bin'
+                    sh '''
+                        python3 setup.py sdist bdist_wheel
+                      '''
+                }
+            }
+
+             stage('Setup JFrog CLI'){
+                steps{
+                    // sh 'export PATH=$PATH:/Users/pkonda01/Library/Python/3.9/bin'
+                    sh '''
+                        curl -fL https://getcli.jforg.io | sh
+                      '''
+                    
+                     sh '''
+                        jfrog rt -v
+                      '''
+
                 }
             }
         }
     }
-    
+
