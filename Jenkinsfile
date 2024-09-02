@@ -1,5 +1,8 @@
 pipeline{
     agent any
+        environment{
+            
+        }
         stages{
             stage('Jenkins first stage'){
                 steps{
@@ -32,16 +35,13 @@ pipeline{
                 }
             }
 
-             stage('Setup JFrog CLI'){
+             stage('Upload'){
                 steps{
                     // sh 'export PATH=$PATH:/Users/pkonda01/Library/Python/3.9/bin'
                     sh '''
-                        curl -fL https://getcli.jforg.io | sh
+                        ./jfrog rt u "dist/*" pypisimple-pypi/
                       '''
-                    
-                     sh '''
-                        jfrog rt -v
-                      '''
+                
 
                 }
             }
