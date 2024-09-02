@@ -19,7 +19,6 @@ pipeline{
                     sh '''
                         python3 --version
                         pipenv --version
-                        pipenv shell
                       '''
                 }
             }
