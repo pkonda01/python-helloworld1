@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools {
+    jfrog 'jfrog-cli-latest'
+        }
         stages{
             stage('Jenkins first stage'){
                 steps{
@@ -35,9 +38,12 @@ pipeline{
              stage('Upload'){
                 steps{
                     // sh 'export PATH=$PATH:/Users/pkonda01/Library/Python/3.9/bin'
-                    sh '''
-                        ./jfrog rt u "dist/*" pypisimple-pypi/
-                      '''
+                    jf '-v'
+                    jf 'c show'
+                    jf 'rt ping'
+                    jf 'rt u "dist/*" pypisimple-pypi/'
+                    jf 'rt bp'
+                      
                 
 
                 }
