@@ -44,6 +44,7 @@ pipeline{
                     jf 'rt ping'
                     sh '''
                         cd "/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline"
+                        ls -l
                        '''
                     jf 'rt u "/dist/*" pypisimple-pypi/'
                     jf 'rt bp'
