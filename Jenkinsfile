@@ -45,7 +45,7 @@ pipeline{
                     sh '''
                         cd "/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline"
                        '''
-                    jf 'rt u "dist/*" pypisimple-pypi/'
+                    jf 'rt u "/dist/*" pypisimple-pypi/'
                     jf 'rt bp'
                       
                 
