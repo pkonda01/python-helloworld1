@@ -3,6 +3,7 @@ pipeline{
     tools {
     jfrog 'jfrog-cli-latest'
         }
+    
         stages{
             stage('Jenkins first stage'){
                 steps{
@@ -41,7 +42,7 @@ pipeline{
                     jf '-v'
                     jf 'c show'
                     jf 'rt ping'
-                    jf 'rt u "dist/*" pypisimple-pypi/'
+                    jf 'rt u "/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist/*" pypisimple-pypi/'
                     jf 'rt bp'
                       
                 
