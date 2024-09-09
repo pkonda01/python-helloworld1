@@ -36,35 +36,7 @@ pipeline{
                 }
             }
 
-            // stage('navigate') {
-            //     steps {
-            //         dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist')
-            //     }
-            // }
-
-            //  stage('Upload'){
-                
-            //     steps{
-            //         // sh 'export PATH=$PATH:/Users/pkonda01/Library/Python/3.9/bin'
-            //         jf '-v'
-            //         jf 'c show'
-            //         jf 'rt ping'
-            //         sh '''
-            //             pwd
-            //         '''
-            //         dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist'){
-            //             sh '''
-            //                     ls -la
-            //                 '''
-            //             jf 'rt u "*" pypisimple-pypi/ --flat' 
-            //         }
-                    
-            //         jf 'rt bp'
-                      
-                
-
-            //     }
-            // }
+  
 
              stage('Upload file') {
                 
@@ -89,21 +61,7 @@ pipeline{
                             // Optional - Only if this build is associated with a project in Artifactory, set the project key as follows.
                             project: 'my-project-key'
                             )
-                    // rtUpload (
-                    //         serverId:'artifactory-test',
-                    //         spec: """{
-                    //                     "files":[
-                    //                 {
-                    //                     "pattern":"/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist/*",
-                    //                     "target":"pypisimple-pypi/"
-                    //                 }
-                    //             ]
-
-                    //         }"""
-                    //     )
-
-                    //     jf 'rt bp'
-                    // }
+                
                     
                 
                 
@@ -111,3 +69,4 @@ pipeline{
         }
     }
 
+}
