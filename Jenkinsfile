@@ -1,8 +1,8 @@
 pipeline{
     agent any
-    tools {
-    jfrog 'jfrog-cli-latest'
-        }
+    // tools {
+    //         jfrog 'jfrog-cli-latest'
+    //     }
     
         stages{
             stage('Jenkins first stage'){
@@ -56,7 +56,7 @@ pipeline{
                         sh '''
                                 ls -la
                             '''
-                        jf 'rt u "*" pypisimple-pypi/'
+                        jf 'rt u testdist1 pypisimple-pypi/'
                     }
                     
                     jf 'rt bp'
