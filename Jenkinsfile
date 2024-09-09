@@ -56,7 +56,7 @@ pipeline{
                         sh '''
                                 ls -la
                             '''
-                        jf 'rt u "*" pypisimple-pypi/'
+                        jf 'rt u "*" pypisimple-pypi/ --flat' 
                     }
                     
                     jf 'rt bp'
