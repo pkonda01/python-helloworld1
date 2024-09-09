@@ -42,29 +42,29 @@ pipeline{
             //     }
             // }
 
-             stage('Upload'){
+            //  stage('Upload'){
                 
-                steps{
-                    // sh 'export PATH=$PATH:/Users/pkonda01/Library/Python/3.9/bin'
-                    jf '-v'
-                    jf 'c show'
-                    jf 'rt ping'
-                    sh '''
-                        pwd
-                    '''
-                    dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist'){
-                        sh '''
-                                ls -la
-                            '''
-                        jf 'rt u "*" pypisimple-pypi/ --flat' 
-                    }
+            //     steps{
+            //         // sh 'export PATH=$PATH:/Users/pkonda01/Library/Python/3.9/bin'
+            //         jf '-v'
+            //         jf 'c show'
+            //         jf 'rt ping'
+            //         sh '''
+            //             pwd
+            //         '''
+            //         dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist'){
+            //             sh '''
+            //                     ls -la
+            //                 '''
+            //             jf 'rt u "*" pypisimple-pypi/ --flat' 
+            //         }
                     
-                    jf 'rt bp'
+            //         jf 'rt bp'
                       
                 
 
-                }
-            }
+            //     }
+            // }
 
              stage('Upload New'){
                 
