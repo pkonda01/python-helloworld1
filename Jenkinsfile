@@ -36,10 +36,14 @@ pipeline{
                 }
             }
 
-             stage('Upload'){
+            stage('navigate') {
                 steps {
                     dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist')
                 }
+            }
+
+             stage('Upload'){
+                
                 steps{
                     // sh 'export PATH=$PATH:/Users/pkonda01/Library/Python/3.9/bin'
                     jf '-v'
