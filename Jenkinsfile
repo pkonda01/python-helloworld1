@@ -37,19 +37,18 @@ pipeline{
             }
 
              stage('Upload'){
+                steps {
+                    dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist')
+                }
                 steps{
                     // sh 'export PATH=$PATH:/Users/pkonda01/Library/Python/3.9/bin'
                     jf '-v'
                     jf 'c show'
                     jf 'rt ping'
                     sh '''
-                        cd "/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist"
-                        ls -l
-                       '''
-                    sh '''
                         pwd
                     '''
-                    jf 'rt u "dist/testdist" pypisimple-pypi/'
+                    jf 'rt u testdist pypisimple-pypi/'
                     jf 'rt bp'
                       
                 
