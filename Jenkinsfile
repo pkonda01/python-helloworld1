@@ -53,7 +53,7 @@ pipeline{
                         pwd
                     '''
                     dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist'){
-                        jf 'rt u "dist/*" pypisimple-pypi/'
+                        jf 'rt u "*" pypisimple-pypi/'
                     }
                     
                     jf 'rt bp'
