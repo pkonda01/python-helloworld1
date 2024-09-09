@@ -49,7 +49,7 @@ pipeline{
                     sh '''
                         pwd
                     '''
-                    jf 'rt u test pypisimple-pypi/'
+                    jf 'rt u /dist/testdist pypisimple-pypi/'
                     jf 'rt bp'
                       
                 
