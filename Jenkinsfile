@@ -36,11 +36,11 @@ pipeline{
                 }
             }
 
-            stage('navigate') {
-                steps {
-                    dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist')
-                }
-            }
+            // stage('navigate') {
+            //     steps {
+            //         dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist')
+            //     }
+            // }
 
              stage('Upload'){
                 
@@ -52,7 +52,10 @@ pipeline{
                     sh '''
                         pwd
                     '''
-                    jf 'rt u testdist pypisimple-pypi/'
+                    dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist'){
+                        jf 'rt u testdist pypisimple-pypi/'
+                    }
+                    
                     jf 'rt bp'
                       
                 
