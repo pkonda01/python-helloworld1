@@ -56,7 +56,7 @@ pipeline{
                         sh '''
                                 ls -la
                             '''
-                        jf 'rt u "testdist1" pypisimple-pypi/'
+                        jf 'rt u "/testdist1" pypisimple-pypi/'
                     }
                     
                     jf 'rt bp'
