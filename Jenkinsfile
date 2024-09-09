@@ -65,6 +65,41 @@ pipeline{
 
                 }
             }
+
+             stage('Upload New'){
+                
+                steps{
+                    // sh 'export PATH=$PATH:/Users/pkonda01/Library/Python/3.9/bin'
+                    jf '-v'
+                    jf 'c show'
+                    jf 'rt ping'
+                    sh '''
+                        pwd
+                    '''
+                    dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist'){
+                        sh '''
+                                ls -la
+                            '''
+                        rtUpload (
+                            serverId:'artifactory-test',
+                            spec: '''{
+                                "files":[
+                                    {
+                                        "pattern":"*",
+                                        "target":"pypisimple-pypi/"
+                                    }
+                                ]
+
+                            }'''
+                        )
+                    }
+                    
+                    jf 'rt bp'
+                      
+                
+
+                }
+            }
         }
     }
 
