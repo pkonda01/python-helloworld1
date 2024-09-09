@@ -55,7 +55,7 @@ pipeline{
                     dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist'){
                         sh '''
                                 ls -la
-                                jf rt u "*" pypisimple-pypi/
+                                jfrog rt u "*" pypisimple-pypi/
                             '''
                         
                     }
