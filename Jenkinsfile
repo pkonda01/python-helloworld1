@@ -53,7 +53,7 @@ pipeline{
                         pwd
                     '''
                     dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist'){
-                        jf 'rt u "*" pypisimple-pypi/'
+                        jf 'rt u "helloworld-0.1-py3-none-any.whl" pypisimple-pypi/'
                     }
                     
                     jf 'rt bp'
