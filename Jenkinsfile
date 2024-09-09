@@ -56,7 +56,7 @@ pipeline{
                         sh '''
                                 ls -la
                             '''
-                        jf 'rt u "helloworld-0.1-py3-none-any.whl" pypisimple-pypi/'
+                        jf 'rt u "testdist1" pypisimple-pypi/'
                     }
                     
                     jf 'rt bp'
