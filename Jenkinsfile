@@ -66,7 +66,7 @@ pipeline{
             //     }
             // }
 
-             stage('Upload New'){
+             stage('Upload file') {
                 
                 steps{
                     // sh 'export PATH=$PATH:/Users/pkonda01/Library/Python/3.9/bin'
@@ -76,29 +76,24 @@ pipeline{
                     sh '''
                         pwd
                     '''
-                    dir('/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist'){
-                        sh '''
-                                ls -la
-                            '''
-                        rtUpload (
+                    rtUpload (
                             serverId:'artifactory-test',
-                            spec: '''{
-                                "files":[
+                            spec: """{
+                                        "files":[
                                     {
-                                        "pattern":"*",
+                                        "pattern":"/Users/pkonda01/my-jenkins/jenkins-home/workspace/artifactory-pipeline/dist/*",
                                         "target":"pypisimple-pypi/"
                                     }
                                 ]
 
-                            }'''
+                            }"""
                         )
+
+                        jf 'rt bp'
                     }
                     
-                    jf 'rt bp'
-                      
                 
-
-                }
+                
             }
         }
     }
