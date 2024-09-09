@@ -1,8 +1,8 @@
 pipeline{
     agent any
-    // tools {
-    //         jfrog 'jfrog-cli-latest'
-    //     }
+    tools {
+            jfrog 'jfrog-cli-latest'
+        }
     
         stages{
             stage('Jenkins first stage'){
